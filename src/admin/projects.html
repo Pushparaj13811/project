@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <h1 class="text-2xl font-semibold mb-4">Projects</h1>
+
+      <!-- Form for creating a new project -->
+      <div class="mb-8">
+        <h2 class="text-lg font-semibold mb-2">Create New Project</h2>
+        <form>
+          <div class="mb-4">
+            <label
+              for="projectName"
+              class="block text-sm font-medium text-gray-700"
+              >Project Name</label
+            >
+            <input
+              type="text"
+              id="projectName"
+              name="projectName"
+              class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="projectDescription"
+              class="block text-sm font-medium text-gray-700"
+              >Project Description</label
+            >
+            <textarea
+              id="projectDescription"
+              name="projectDescription"
+              rows="3"
+              class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Create Project
+          </button>
+        </form>
+      </div>
+
+      <!-- Charts for project progress -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Pie Chart -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-lg font-semibold mb-4">
+            Project Progress (Pie Chart)
+          </h2>
+          <canvas id="projectPieChart" width="400" height="200"></canvas>
+        </div>
+        <!-- Bar Chart -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-lg font-semibold mb-4">
+            Project Progress (Bar Chart)
+          </h2>
+          <canvas id="projectBarChart" width="400" height="200"></canvas>
+        </div>
+        <!-- Line Chart -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-lg font-semibold mb-4">
+            Project Progress (Line Chart)
+          </h2>
+          <canvas id="projectLineChart" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sample data for the charts
+      const projectData = {
+        labels: ["Task A", "Task B", "Task C", "Task D", "Task E"],
+        datasets: [
+          {
+            label: "Progress",
+            data: [20, 30, 40, 10, 50], // Sample progress percentage for each task
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Initialize the pie chart
+      const projectPieChartCanvas = document.getElementById("projectPieChart");
+      const projectPieChart = new Chart(projectPieChartCanvas, {
+        type: "pie",
+        data: projectData,
+      });
+
+      // Initialize the bar chart
+      const projectBarChartCanvas = document.getElementById("projectBarChart");
+      const projectBarChart = new Chart(projectBarChartCanvas, {
+        type: "bar",
+        data: projectData,
+      });
+
+      // Initialize the line chart
+      const projectLineChartCanvas =
+        document.getElementById("projectLineChart");
+      const projectLineChart = new Chart(projectLineChartCanvas, {
+        type: "line",
+        data: projectData,
+      });
+    </script>
+  </body>
+</html>

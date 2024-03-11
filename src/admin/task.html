@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create and Assign Task</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <h1 class="text-2xl font-semibold mb-4">Create and Assign Task</h1>
+      <form>
+        <div class="mb-4">
+          <label for="task-name" class="block text-sm font-medium text-gray-700"
+            >Task Name</label
+          >
+          <input
+            type="text"
+            id="task-name"
+            name="task-name"
+            class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            for="task-description"
+            class="block text-sm font-medium text-gray-700"
+            >Task Description</label
+          >
+          <textarea
+            id="task-description"
+            name="task-description"
+            rows="4"
+            class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="assignee" class="block text-sm font-medium text-gray-700"
+            >Assignee</label
+          >
+          <select
+            id="assignee"
+            name="assignee"
+            class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          >
+            <option value="">Select an assignee</option>
+            <option value="user1">User 1</option>
+            <option value="user2">User 2</option>
+            <option value="user3">User 3</option>
+            <!-- Add more users as needed -->
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="due-date" class="block text-sm font-medium text-gray-700"
+            >Due Date</label
+          >
+          <input
+            type="date"
+            id="due-date"
+            name="due-date"
+            class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          />
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Create Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

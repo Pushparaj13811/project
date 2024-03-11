@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Settings</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <h1 class="text-2xl font-semibold mb-4">Settings</h1>
+
+      <!-- Form for updating settings -->
+      <div class="mb-8">
+        <h2 class="text-lg font-semibold mb-2">General Settings</h2>
+        <form>
+          <div class="mb-4">
+            <label
+              for="siteName"
+              class="block text-sm font-medium text-gray-700"
+              >Site Name</label
+            >
+            <input
+              type="text"
+              id="siteName"
+              name="siteName"
+              class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="siteDescription"
+              class="block text-sm font-medium text-gray-700"
+              >Site Description</label
+            >
+            <textarea
+              id="siteDescription"
+              name="siteDescription"
+              rows="3"
+              class="mt-1 p-2 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Update Settings
+          </button>
+        </form>
+      </div>
+
+      <!-- Additional settings can be added here -->
+    </div>
+  </body>
+</html>
